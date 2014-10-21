@@ -2,6 +2,7 @@
  * Which means we took out all the code that can change in future
  * */
 
+/*
 package com.pizza.mine;
 
 
@@ -30,3 +31,4 @@ public class SimplePizzaFactory
 		return pizza;
 	}
 }
+*/
