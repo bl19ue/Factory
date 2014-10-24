@@ -6,9 +6,14 @@ public class NYPizzaStore extends PizzaStore
 	@Override
 	public Pizza createPizza(String type) 
 	{
+		Pizza pizza = null;
+		PizzaIngredientFactory ingredientFactory = new NYPizzaIngredientFactory();
+		
 		if(type.equals("cheese"))
 		{
-			return new NYStyleCheesePizza();
+			pizza = new CheesePizza(ingredientFactory);
+			pizza.setName("New york stye cheese pizza");
+			//Same should be for all below 
 		}
 		else if(type.equals("peperoni"))
 		{
@@ -22,7 +27,7 @@ public class NYPizzaStore extends PizzaStore
 		{
 			//return new NYStyleVeggiePizza();
 		}
-		return null;
+		return pizza;
 	}
 	//The orderPizza in superclass has no idea which pizza we are creating
 	//It just knows it can prepare, bake, cut and box it.
